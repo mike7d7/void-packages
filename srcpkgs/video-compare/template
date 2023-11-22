@@ -3,14 +3,15 @@ pkgname=video-compare
 version=20231119
 revision=1
 build_style=gnu-makefile
+makedepends="ffmpeg-devel SDL2-devel SDL2_ttf-devel"
+depends="ffmpeg SDL2 SDL2_ttf"
 short_desc="Split screen video comparison tool using FFmpeg and SDL2"
-maintainer="name <email>"
-license="GPL-2.0"
+maintainer="Miguel <migue07mx@protonmail.com>"
+license="GPL-2.0-only"
 homepage="https://github.com/pixop/video-compare"
 distfiles="https://github.com/pixop/video-compare/archive/refs/tags/${version}.tar.gz"
 checksum=2c6922b7f6418ea4df596664581bde453613ba665f627732cba26d5ff977b5dd
-makedepends="ffmpeg-devel SDL2-devel SDL2_ttf-devel"
-depends="ffmpeg SDL2 SDL2_ttf"
-do_install() { 
-    vbin video-compare
+
+do_install() {
+	vbin video-compare
 }
