@@ -1,0 +1,26 @@
+# Template file for 'swayosd'
+pkgname=swayosd
+version=0.1.0
+revision=1
+build_style=meson
+configure_args="--buildtype=release"
+hostmakedepends="pkg-config cargo"
+makedepends="eudev-libudev-devel libevdev-devel gtk+3-devel gtk-layer-shell-devel
+	libinput-devel atk-devel glib-devel pulseaudio-devel"
+short_desc="GTK based on screen display for keyboard shortcuts like volume"
+maintainer="migue07juegos <migue07mx@protonmail.com>"
+license="GPL-3.0-only"
+homepage="https://github.com/ErikReider/SwayOSD"
+distfiles="https://github.com/ErikReider/SwayOSD/archive/refs/heads/main.tar.gz"
+checksum=698814789a1e6452f430235bdf8678a718095f260b67538b7bf7ea38917ba639
+
+do_install() {
+	meson install -C build
+	vbin /usr/bin/swayosd-client
+	vbin /usr/bin/swayosd-server
+	vbin /usr/bin/swayosd-libinput-backend
+}
+
+post_install() {
+	vsv swayosd-libinput-backend
+}
