@@ -24,7 +24,6 @@ do_install() {
 	vinstall /usr/share/polkit-1/actions/org.erikreider.swayosd.policy 644 /usr/share/polkit-1/actions
 	vinstall /usr/share/polkit-1/rules.d/org.erikreider.swayosd.rules 644 /usr/share/polkit-1/rules.d
 	vinstall /usr/lib/udev/rules.d/99-swayosd.rules 644 /usr/lib/udev/rules.d
-	vlicense LICENSE
 }
 
 post_install() {
