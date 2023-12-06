@@ -5,20 +5,15 @@ revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF
  -DKF5_HOST_TOOLING=/usr/lib/cmake"
-short_desc="A minimal Plasma shell package intended for embedded devices"
-maintainer="name <email>"
-license="GPL-2.0-or-later AND LGPL-2.1-or-later"
-homepage="https://invent.kde.org/kde/plasma-nano"
-distfiles="https://download.kde.org/stable/plasma/$version/plasma-nano-$version.tar.xz"
-checksum=c622439874144dc8cf5c13ad458f8396b622834df6ec815f35a014d039f66dbc
 makedepends="
-	extra-cmake-modules
-	kwayland-devel
-	kwindowsystem-devel
-	plasma-framework-devel
-	qt5-devel
-	qt5-declarative-devel
-	samurai
-	gettext-devel
-	"
+	extra-cmake-modules kwayland-devel kwindowsystem-devel
+	plasma-framework-devel qt5-devel qt5-declarative-devel
+	samurai gettext-devel"
 depends="qt5-virtualkeyboard"
+
+short_desc="Minimal Plasma shell package intended for embedded devices"
+maintainer="migue07juegos <migue07mx@protonmail.com>"
+license="GPL-2.0-or-later, LGPL-2.1-or-later"
+homepage="https://invent.kde.org/kde/plasma-nano"
+distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
+checksum=c622439874144dc8cf5c13ad458f8396b622834df6ec815f35a014d039f66dbc

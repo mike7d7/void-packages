@@ -5,37 +5,16 @@ revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF
  -DKF5_HOST_TOOLING=/usr/lib/cmake"
+hostmakedepends="pkg-config"
+makedepends="extra-cmake-modules kauth-devel kcmutils-devel kconfig-devel
+	kcoreaddons-devel kdbusaddons-devel kdeclarative-devel ki18n-devel kio-devel
+	kirigami-addons kwindowsystem-devel modemmanager-qt5-devel
+	networkmanager-qt5-devel plasma-framework-devel qt5-devel
+	qt5-declarative-devel samurai ksolid-devel gettext-devel"
+depends="kded kirigami-addons kirigami2 qt5-quickcontrols2"
 short_desc="Settings application for Plasma Mobile"
-maintainer="name <email>"
-license="GPL-2.0-or-later AND LGPL-2.1-or-later"
+maintainer="migue07juegos <migue07mx@protonmail.com>"
+license="GPL-2.0-or-later, LGPL-2.1-or-later"
 homepage="https://community.kde.org/Plasma/Mobile"
-distfiles="https://download.kde.org/stable/plasma-mobile/$version/plasma-settings-$version.tar.xz"
+distfiles="${KDE_SITE}/plasma-mobile/${version}/${pkgname}-${version}.tar.xz"
 checksum=e786dd522969fea5be9f4e91ecfb8ccffc28127ba0de74f634aa9600bdfce03b
-makedepends="
-	extra-cmake-modules
-	kauth-devel
-	kcmutils-devel
-	kconfig-devel
-	kcoreaddons-devel
-	kdbusaddons-devel
-	kdeclarative-devel
-	ki18n-devel
-	kio-devel
-	kirigami-addons
-	kwindowsystem-devel
-	modemmanager-qt5-devel
-	networkmanager-qt5-devel
-	plasma-framework-devel
-	qt5-devel
-	qt5-declarative-devel
-	samurai
-	ksolid-devel
-	gettext-devel
-	pkg-config
-	"
-depends="
-	kded
-	kirigami-addons
-	kirigami2
-	qt5-quickcontrols2
-	"

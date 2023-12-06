@@ -5,39 +5,17 @@ revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF
  -DKF5_HOST_TOOLING=/usr/lib/cmake"
-short_desc="A 10-feet interface made for TVs"
-maintainer="name <email>"
-license="BSD-2-Clause AND (GPL-2.0-only OR GPL-3.0-only) AND CC0-1.0"
+makedepends="extra-cmake-modules kactivities5-devel kactivities5-stats-devel
+	kcmutils-devel kdeclarative-devel ki18n-devel kio-devel kirigami2-devel
+	knotifications-devel kwayland-devel kwindowsystem-devel
+	plasma-framework-devel plasma-workspace-devel qt5-devel
+	qt5-declarative-devel qt5-multimedia-devel samurai gettext-devel"
+depends="kde-cli-tools kdeconnect kirigami2 plasma-nano plasma-nm plasma-pa
+	plasma-remotecontrollers plasma-settings plasma-workspace
+	systemsettings kscreen"
+short_desc="10-feet interface made for TVs"
+maintainer="migue07juegos <migue07mx@protonmail.com>"
+license="LGPL-2.1-only, LGPL-3.0-only"
 homepage="https://invent.kde.org/plasma/plasma-bigscreen/"
-distfiles="https://download.kde.org/stable/plasma/$version/plasma-bigscreen-$version.tar.xz"
+distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
 checksum=8b930d27390747c9319eef798b80fc2dbaf41e1940cb8af257d766b4aa1eb891
-makedepends="
-	extra-cmake-modules
-	kactivities5-devel
-	kactivities5-stats-devel
-	kcmutils-devel
-	kdeclarative-devel
-	ki18n-devel
-	kio-devel
-	kirigami2-devel
-	knotifications-devel
-	kwayland-devel
-	kwindowsystem-devel
-	plasma-framework-devel
-	plasma-workspace-devel
-	qt5-devel
-	qt5-declarative-devel
-	qt5-multimedia-devel
-	samurai
-	gettext-devel
-	"
-depends="
-	kde-cli-tools
-	kdeconnect
-	kirigami2
-	plasma-nano
-	plasma-nm
-	plasma-pa
-	plasma-remotecontrollers
-	plasma-settings
-	plasma-workspace"
