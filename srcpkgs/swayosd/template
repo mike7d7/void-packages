@@ -4,7 +4,7 @@ version=0.1.0
 revision=1
 build_style=meson
 configure_args="--buildtype=release"
-hostmakedepends="pkg-config cargo"
+hostmakedepends="pkg-config cargo sassc"
 makedepends="eudev-libudev-devel libevdev-devel gtk+3-devel gtk-layer-shell-devel
 	libinput-devel atk-devel glib-devel pulseaudio-devel"
 short_desc="GTK based on screen display for keyboard shortcuts like volume"
@@ -12,7 +12,7 @@ maintainer="migue07juegos <migue07mx@protonmail.com>"
 license="GPL-3.0-only"
 homepage="https://github.com/ErikReider/SwayOSD"
 distfiles="https://github.com/ErikReider/SwayOSD/archive/refs/heads/main.tar.gz"
-checksum=698814789a1e6452f430235bdf8678a718095f260b67538b7bf7ea38917ba639
+checksum=6eace54580987862bd1c857117fc6923f027b4f563b7d68be42bdeef1360782e
 
 do_install() {
 	meson install -C build
@@ -24,6 +24,7 @@ do_install() {
 	vinstall /usr/share/polkit-1/actions/org.erikreider.swayosd.policy 644 /usr/share/polkit-1/actions
 	vinstall /usr/share/polkit-1/rules.d/org.erikreider.swayosd.rules 644 /usr/share/polkit-1/rules.d
 	vinstall /usr/lib/udev/rules.d/99-swayosd.rules 644 /usr/lib/udev/rules.d
+	vinstall /etc/xdg/swayosd/style.css 644 /etc/xdg/swayosd
 }
 
 post_install() {
