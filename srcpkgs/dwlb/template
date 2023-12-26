@@ -1,0 +1,20 @@
+# Template file for 'dwlb'
+pkgname=dwlb
+version=0.2
+revision=1
+build_style=gnu-makefile
+make_build_args="CFLAGS+=-I/usr/include/pixman-1/"
+hostmakedepends="pkg-config clang wayland-protocols"
+makedepends="wayland-devel pixman-devel fcft-devel"
+depends=""
+short_desc="Feature-Complete Bar for DWL"
+maintainer="migue07juegos <migue07mx@protonmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/kolunmi/dwlb"
+distfiles="https://github.com/kolunmi/dwlb/archive/refs/heads/main.tar.gz"
+checksum=c7b0fe4514f31065b7ccd9b9ff4032d52eeeb7615c9790b8fd95dc739ba101ad
+
+do_install() {
+	vbin dwlb
+	vman dwlb.1
+}
