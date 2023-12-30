@@ -1,6 +1,6 @@
 # Template file for 'an-anime-game-launcher'
 pkgname=an-anime-game-launcher
-version=3.9.3
+version=3.9.4
 revision=1
 build_style=cargo
 hostmakedepends="pkg-config"
@@ -11,4 +11,4 @@ maintainer="migue07juegos <migue07mx@protonmail.com>"
 license="GPL-3.0-only"
 homepage="https://github.com/an-anime-team/an-anime-game-launcher"
 distfiles="https://github.com/an-anime-team/an-anime-game-launcher/archive/refs/tags/${version}.tar.gz"
-checksum=69c0b341d0212906dcfc7795b266699b9947736f55ff6d8055c97266e6c3f9cf
+checksum=3eefdfe6b6b49f5866c674da7233961b2df3c06ae9373038fb7836e5ba6bc9cd
