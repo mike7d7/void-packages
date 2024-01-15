@@ -1,15 +1,15 @@
---- a/config.def.h	2023-10-23 20:37:42.835680070 -0600
-+++ b/config.def.h	2023-12-08 13:40:23.666683477 -0600
-@@ -11,7 +11,7 @@
+--- a/config.def.h	2024-01-15 10:45:00.455720668 -0600
++++ b/config.def.h	2024-01-15 10:35:56.344024983 -0600
+@@ -12,7 +12,7 @@
  static const float focuscolor[]            = COLOR(0x005577ff);
  static const float urgentcolor[]           = COLOR(0xff0000ff);
  /* To conform the xdg-protocol, set the alpha to zero to restore the old behavior */
--static const float fullscreen_bg[]         = {0.1, 0.1, 0.1, 1.0}; /* You can also use glsl colors */
-+static const float fullscreen_bg[]         = {0.1, 0.1, 0.1, 1.0};
+-static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
++static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f};
  
  /* tagging - TAGCOUNT must be no greater than 31 */
  #define TAGCOUNT (9)
-@@ -24,7 +24,17 @@
+@@ -25,7 +25,17 @@
  	/* examples:
  	{ "Gimp",     NULL,       0,            1,           -1 },
  	*/
@@ -28,27 +28,27 @@
  };
  
  /* layout(s) */
-@@ -37,12 +47,14 @@
- 
+@@ -39,12 +49,14 @@
  /* monitors */
+ /* NOTE: ALWAYS add a fallback rule, even if you are completely sure it won't be used */
  static const MonitorRule monrules[] = {
--	/* name       mfact nmaster scale layout       rotate/reflect                x    y */
+-	/* name       mfact  nmaster scale layout       rotate/reflect                x    y */
 -	/* example of a HiDPI laptop monitor:
--	{ "eDP-1",    0.5,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+-	{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 -	*/
 +	/* name       mfact nmaster scale layout       rotate/reflect */
 +	/* example of a HiDPI laptop monitor:*/
-+	/*{ "DP-2",    0.55,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, 0, 0, 1920, 1080, 144.000, 0, 0},*/
++	/*{ "DP-2",    0.55f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, 0, 0, 1920, 1080, 144.000, 0, 0},*/
 +
  	/* defaults */
--	{ NULL,       0.55, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
-+	/*{ "HDMI-A-1",    0.55,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, 1920, 0, 1920, 1080, 60.000, 0, 0},*/
+-	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
++	/*{ "HDMI-A-1",    0.55f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, 1920, 0, 1920, 1080, 60.000, 0, 0},*/
 +
-+	{ NULL,       0.55, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, -1, -1 },
++	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL, -1, -1 },
  };
  
  /* keyboard */
-@@ -91,8 +103,8 @@
+@@ -93,8 +105,8 @@
  LIBINPUT_CONFIG_ACCEL_PROFILE_FLAT
  LIBINPUT_CONFIG_ACCEL_PROFILE_ADAPTIVE
  */
@@ -59,7 +59,7 @@
  /* You can choose between:
  LIBINPUT_CONFIG_TAP_MAP_LRM -- 1/2/3 finger tap maps to left/right/middle
  LIBINPUT_CONFIG_TAP_MAP_LMR -- 1/2/3 finger tap maps to left/middle/right
-@@ -100,7 +112,7 @@
+@@ -102,7 +114,7 @@
  static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TAP_MAP_LRM;
  
  /* If you want to use the windows key for MODKEY, use WLR_MODIFIER_LOGO */
@@ -68,7 +68,7 @@
  
  #define TAGKEYS(KEY,SKEY,TAG) \
  	{ MODKEY,                    KEY,            view,            {.ui = 1 << TAG} }, \
-@@ -113,13 +125,14 @@
+@@ -115,13 +127,14 @@
  
  /* commands */
  static const char *termcmd[] = { "foot", NULL };
@@ -85,7 +85,7 @@
  	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
  	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
  	{ MODKEY,                    XKB_KEY_i,          incnmaster,     {.i = +1} },
-@@ -134,22 +147,28 @@
+@@ -136,22 +149,28 @@
  	{ MODKEY,                    XKB_KEY_m,          setlayout,      {.v = &layouts[2]} },
  	{ MODKEY,                    XKB_KEY_space,      setlayout,      {0} },
  	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_space,      togglefloating, {0} },
