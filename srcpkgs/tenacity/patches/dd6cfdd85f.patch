@@ -1,0 +1,38 @@
+From dd6cfdd85f17de83482f60a69b663baa81ac0b13 Mon Sep 17 00:00:00 2001
+From: Avery King <avery98@pm.me>
+Date: Sun, 12 Nov 2023 16:25:16 -0800
+Subject: [PATCH] More wxWidgets 3.2.4 compatibility fixes
+
+Co-authored-by: Irene Knapp
+Signed-off-by: Avery King <avery98@pm.me>
+---
+ src/Tags.cpp           | 2 +-
+ src/prefs/GUIPrefs.cpp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/Tags.cpp b/src/Tags.cpp
+index 50c940bcd..1833307fe 100644
+--- a/src/Tags.cpp
++++ b/src/Tags.cpp
+@@ -631,7 +631,7 @@ class ComboEditor final : public wxGridCellChoiceEditor
+ public:
+    ComboEditor(const wxArrayString& choices, bool allowOthers = false)
+    :  wxGridCellChoiceEditor(choices, allowOthers)
+-   ,  m_choices{ choices }
++   ,  m_choices(choices)
+    ,  m_allowOthers{ allowOthers }
+    {
+    }
+diff --git a/src/prefs/GUIPrefs.cpp b/src/prefs/GUIPrefs.cpp
+index db7ea33d1..6b17f3e0d 100644
+--- a/src/prefs/GUIPrefs.cpp
++++ b/src/prefs/GUIPrefs.cpp
+@@ -80,7 +80,7 @@ void GUIPrefs::GetRangeChoices(
+       wxT("145") ,
+    };
+    if (pCodes)
+-      *pCodes = sCodes;
++      *pCodes = static_cast<const wxArrayStringEx&>(sCodes);
+ 
+    static const std::initializer_list<TranslatableString> sChoices = {
+       XO("-36 dB (shallow range for high-amplitude editing)") ,
