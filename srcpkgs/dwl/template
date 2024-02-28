@@ -10,7 +10,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/djpohly/dwl"
 distfiles="https://codeberg.org/anon_cvptw/dwl/archive/main.tar.gz" 
 #wait for 539 merge
-checksum=6e462c98b0f554f4816ff0e16b1fc82ed85f56264a2d03e0dcf6f55bbeb01d92
+checksum=b8fa597971362119672a8e9be45731cc465585408a357609e11b2fa4c0eeb508
 
 do_build() {
     [ -e ${FILESDIR}/config.h ] && cp ${FILESDIR}/config.h config.h

@@ -20,8 +20,8 @@ hostmakedepends="autoconf213 unzip zip pkg-config perl python3.11 yasm rust
 makedepends="nss-devel libjpeg-turbo-devel gtk+3-devel icu-devel
  pixman-devel libevent-devel libnotify-devel libvpx-devel libwebp-devel
  libXrender-devel libXcomposite-devel libSM-devel libXt-devel rust-std
- libXdamage-devel freetype-devel
- $(vopt_if alsa alsa-lib-devel) $(vopt_if dbus dbus-glib-devel)
+ libXdamage-devel freetype-devel alsa-lib-devel
+ $(vopt_if dbus dbus-glib-devel)
  $(vopt_if pulseaudio pulseaudio-devel) $(vopt_if xscreensaver libXScrnSaver-devel)
  $(vopt_if sndio sndio-devel) $(vopt_if jack jack-devel)"
 depends="nss>=3.72 nspr>=4.32 desktop-file-utils hicolor-icon-theme"
@@ -106,8 +106,8 @@ do_build() {
 	fi
 
 	export AS="${CC}"
-	export CFLAGS="-Ofast"
-	export CXXFLAGS="-Ofast"
+	export CFLAGS="-O3"
+	export CXXFLAGS="-O3"
 	export HOST_CFLAGS=""
 	export HOST_CXXFLAGS=""
 	export LDFLAGS="-Wl,-rpath=/usr/lib/firefox"
@@ -201,8 +201,9 @@ do_build() {
 	ac_add_options $(vopt_enable jack)
 	ac_add_options $(vopt_enable pulseaudio)
 	ac_add_options $(vopt_enable sndio)
-	ac_add_options --enable-default-toolkit=$(vopt_if wayland 'cairo-gtk3-wayland' 'cairo-gtk3')
+	#ac_add_options --enable-default-toolkit=$(vopt_if wayland 'cairo-gtk3-wayland' 'cairo-gtk3')
 	# --enable-default-toolkit=cairo-gtk3-wayland-only to compile without x11
+	ac_add_options --enable-default-toolkit=cairo-gtk3-wayland-only
 
 	MOZ_APP_REMOTINGNAME=Firefox
 	!
@@ -222,7 +223,8 @@ do_build() {
 	export MOZ_NOSPAM=1
 	export MOZBUILD_STATE_PATH="${wrksrc}/mozbuild"
 	export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
-	export DISPLAY=":0"
+	export LLVM_PROFDATA="llvm-profdata"
+	#export DISPLAY=":0"
 
 	rm -f old-configure
 	./mach build
