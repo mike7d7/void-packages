@@ -201,9 +201,9 @@ do_build() {
 	ac_add_options $(vopt_enable jack)
 	ac_add_options $(vopt_enable pulseaudio)
 	ac_add_options $(vopt_enable sndio)
-	#ac_add_options --enable-default-toolkit=$(vopt_if wayland 'cairo-gtk3-wayland' 'cairo-gtk3')
+	ac_add_options --enable-default-toolkit=$(vopt_if wayland 'cairo-gtk3-wayland' 'cairo-gtk3')
 	# --enable-default-toolkit=cairo-gtk3-wayland-only to compile without x11
-	ac_add_options --enable-default-toolkit=cairo-gtk3-wayland-only
+	#ac_add_options --enable-default-toolkit=cairo-gtk3-wayland-only
 
 	MOZ_APP_REMOTINGNAME=Firefox
 	!
@@ -224,7 +224,7 @@ do_build() {
 	export MOZBUILD_STATE_PATH="${wrksrc}/mozbuild"
 	export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
 	export LLVM_PROFDATA="llvm-profdata"
-	#export DISPLAY=":0"
+	export DISPLAY=":0"
 
 	rm -f old-configure
 	./mach build
