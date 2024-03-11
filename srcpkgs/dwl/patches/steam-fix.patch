@@ -1,0 +1,13 @@
+--- a/dwl.c	2024-03-08 17:25:44.599710344 -0600
++++ b/dwl.c	2024-03-08 17:26:03.927743933 -0600
+@@ -2960,8 +2960,8 @@
+ 	if (c->isfloating || client_is_unmanaged(c))
+ 		resize(c, (struct wlr_box){.x = event->x, .y = event->y,
+ 				.width = event->width, .height = event->height}, 0);
+-	else
+-		arrange(c->mon);
++	//else
++	//	arrange(c->mon);
+ }
+ 
+ void
