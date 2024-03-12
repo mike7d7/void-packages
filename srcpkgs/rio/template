@@ -1,6 +1,6 @@
 # Template file for 'rio'
 pkgname=rio
-version=0.0.27
+version=0.0.35
 revision=1
 build_style=cargo
 make_install_args="--path rio"
@@ -13,7 +13,7 @@ license="MIT"
 homepage="https://raphamorim.io/rio/"
 changelog="https://raw.githubusercontent.com/raphamorim/rio/main/CHANGELOG.md"
 distfiles="https://github.com/raphamorim/rio/archive/refs/tags/v${version}.tar.gz"
-checksum=2338d679eaec987bd50ab12ca1e9b79853690899d2e8e70efa88315d0c626090
+checksum=2c3bf1c257fac9121e661ecf8a79c58362c84d19acb6adf73d268c860703992e
 
 do_install() {
 	# avoid doing a rebuild in install due to complex feature setup

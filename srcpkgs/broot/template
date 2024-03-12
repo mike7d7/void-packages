@@ -1,6 +1,6 @@
 # Template file for 'broot'
 pkgname=broot
-version=1.28.1
+version=1.36.0
 revision=1
 build_style=cargo
 hostmakedepends="pkg-config"
@@ -11,7 +11,7 @@ license="MIT"
 homepage="https://dystroy.org/broot/"
 changelog="https://raw.githubusercontent.com/Canop/broot/main/CHANGELOG.md"
 distfiles="https://github.com/Canop/broot/archive/refs/tags/v${version}.tar.gz"
-checksum=3c3e33b3b81510e56a58af358e5123dcb3fa7b636accab92c1b3bdfda448a669
+checksum=2929d18c2398afa073f170941a45cd8ab4693d272e1c487c95f7e527569cda99
 
 if [ "$XBPS_TARGET_ENDIAN" = "be" ]; then
 	broken="exr crate errors on big endian"

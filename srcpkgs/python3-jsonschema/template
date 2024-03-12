@@ -1,6 +1,6 @@
 # Template file for 'python3-jsonschema'
 pkgname=python3-jsonschema
-version=4.19.2
+version=4.21.1
 revision=1
 build_style=python3-pep517
 hostmakedepends="hatchling hatch-vcs"
@@ -13,7 +13,7 @@ license="MIT"
 homepage="https://github.com/Julian/jsonschema"
 changelog="https://raw.githubusercontent.com/Julian/jsonschema/master/CHANGELOG.rst"
 distfiles="${PYPI_SITE}/j/jsonschema/jsonschema-${version}.tar.gz"
-checksum=c9ff4d7447eed9592c23a12ccee508baf0dd0d59650615e847feb6cdca74f392
+checksum=85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5
 
 post_install() {
 	vlicense COPYING LICENSE

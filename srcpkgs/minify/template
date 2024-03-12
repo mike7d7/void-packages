@@ -1,6 +1,6 @@
 # Template file for 'minify'
 pkgname=minify
-version=2.20.7
+version=2.20.18
 revision=1
 build_style=go
 go_import_path="github.com/tdewolff/minify/v2"
@@ -10,7 +10,7 @@ maintainer="Leah Neukirchen <leah@vuxu.org>"
 license="MIT"
 homepage="https://github.com/tdewolff/minify"
 distfiles="https://github.com/tdewolff/minify/archive/v${version}.tar.gz"
-checksum=e97763e690f97875ed1391fc3c9df38ac8c1818f8ffacc4ac1be4dc5bdcf2daa
+checksum=f03c6cbb5880a60d7e8c31da5da4f061d855b0503660fb4ac2969c49db03f046
 
 post_install() {
 	vlicense LICENSE

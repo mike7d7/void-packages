@@ -1,6 +1,6 @@
 # Template file for 'OTPClient'
 pkgname=OTPClient
-version=3.2.0
+version=3.5.2
 revision=1
 build_style=cmake
 hostmakedepends="pkg-config"
@@ -12,4 +12,4 @@ maintainer="Emil Miler <em@0x45.cz>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/paolostivanin/OTPClient"
 distfiles="https://github.com/paolostivanin/OTPClient/archive/refs/tags/v${version}.tar.gz"
-checksum=8c3102d3c34ff8ab74e52eaa1be585eb432b62930d51672e5a5df4c95a2e62b2
+checksum=d65363003d497a59ebc7d48c142541ae9a787bc16dddce87fb7b77d9fdbf6ccf

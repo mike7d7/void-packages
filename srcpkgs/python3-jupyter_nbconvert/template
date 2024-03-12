@@ -1,6 +1,6 @@
 # Template file for 'python3-jupyter_nbconvert'
 pkgname=python3-jupyter_nbconvert
-version=7.10.0
+version=7.14.2
 revision=1
 build_style=python3-pep517
 # these two tests require nbconvert.tests (not installed)
@@ -19,7 +19,7 @@ license="BSD-3-Clause"
 homepage="https://github.com/jupyter/nbconvert"
 changelog="https://raw.githubusercontent.com/jupyter/nbconvert/main/CHANGELOG.md"
 distfiles="${PYPI_SITE}/n/nbconvert/nbconvert-${version}.tar.gz"
-checksum=4bedff08848626be544de193b7594d98a048073f392178008ff4f171f5e21d26
+checksum=a7f8808fd4e082431673ac538400218dd45efd076fbeb07cc6e5aa5a3a4e949e
 
 pre_check() {
 	# templates must be in $JUPYTER_DATA_DIR/nbconvert/templates
