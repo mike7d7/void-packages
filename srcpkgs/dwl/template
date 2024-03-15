@@ -8,8 +8,7 @@ makedepends="wlroots0.17-devel pixman-devel"
 short_desc="Simple, hackable dynamic tiling Wayland compositor (dwm for Wayland)"
 license="GPL-3.0-or-later"
 homepage="https://github.com/djpohly/dwl"
-distfiles="https://codeberg.org/anon_cvptw/dwl/archive/main.tar.gz" 
-#wait for 539 merge
+distfiles="https://codeberg.org/dwl/dwl/archive/main.tar.gz" 
 checksum=b8fa597971362119672a8e9be45731cc465585408a357609e11b2fa4c0eeb508
 
 do_build() {
