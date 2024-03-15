@@ -23,6 +23,10 @@ conf_files="/etc/elogind/*.conf"
 # tests fail differently due to containerization and kernel features
 make_check=ci-skip
 
+if [ "$XBPS_TARGET_LIBC" = "glibc" ]; then
+	makedepends+=" libxcrypt-devel"
+fi
+
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 	configure_args+=" -Dutmp=false"
 fi
