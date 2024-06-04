@@ -1,6 +1,6 @@
 # Template file for 'sequoia-sq'
 pkgname=sequoia-sq
-version=0.34.0
+version=0.36.0
 revision=1
 build_style=cargo
 build_helper=qemu
@@ -13,7 +13,7 @@ license="GPL-2.0-or-later"
 homepage="https://sequoia-pgp.org/projects/#sq"
 changelog="https://gitlab.com/sequoia-pgp/sequoia-sq/-/raw/main/NEWS"
 distfiles="https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v${version}/sequoia-sq-v${version}.tar.gz"
-checksum=6458274008ef06362c912eb67e285b734906acdb5c56e8490144f45bc1b81d51
+checksum=abce7394916abff083a8feeb0ca629200010fbb7e15a9dc1af9d411612576987
 conflicts="squirrel"
 
 case "$XBPS_TARGET_MACHINE" in

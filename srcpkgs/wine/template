@@ -1,6 +1,6 @@
 # Template file for 'wine'
 pkgname=wine
-version=9.6
+version=9.10
 revision=1
 _pkgver=${version/r/-r}
 create_wrksrc=yes
@@ -13,8 +13,8 @@ license="LGPL-2.1-or-later"
 homepage="http://www.winehq.org/"
 distfiles="https://dl.winehq.org/wine/source/${version%.*}.x/wine-${_pkgver}.tar.xz
  https://github.com/wine-staging/wine-staging/archive/v${_pkgver}.tar.gz"
-checksum="0e0960ed82b6017e882eda3338bad1270a1177b6cf05f03ac1fab155abe82048
- 6d147e72642d1268684465a383b5c64f5542f011c7745d085de4933df638bd1f"
+checksum="afc34b491bfa14c62c3fdf627dd2b5dcac5e7e9f3f145adb14332578af8cf1c0
+ 79af9a7f18cc975a38ec831903bd62cf509e9445600600aac5d5ed8569bb75d5"
 
 # NOTE: wine depends on specific versions of wine-mono and wine-gecko,
 # check for updates to these packages when updating wine
@@ -48,7 +48,7 @@ makedepends="gettext-devel ncurses-devel glu-devel libSM-devel
  alsa-lib-devel libgphoto2-devel glib-devel
  freetype-devel pulseaudio-devel giflib-devel
  v4l-utils-devel fontconfig-devel gnutls-devel dbus-devel sane-devel
- libpcap-devel cups-devel ocl-icd-devel vulkan-loader gst-plugins-base1-devel
+ libpcap-devel cups-devel ocl-icd-devel vulkan-loader-devel gst-plugins-base1-devel
  SDL2-devel"
 depends="libXi libXinerama libXcomposite libXcursor libOSMesa
  desktop-file-utils hicolor-icon-theme liberation-fonts-ttf

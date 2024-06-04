@@ -759,9 +759,9 @@ built for, available architectures can be found under `common/cross-profiles`.
 In general, `archs` should only be set if the upstream software explicitly targets
 certain architectures or there is a compelling reason why the software should not be
 available on some supported architectures.
-Prepending pattern with tilde means disallowing build on indicated archs.
-First matching pattern is taken to allow/deny build. When no pattern matches,
-package is build if last pattern includes tilde.
+Prepending a pattern with a tilde means disallowing build on the indicated archs.
+The first matching pattern is taken to allow/deny build. When no pattern matches,
+the package is built if the last pattern includes a tilde.
 Examples:
 
 	```
@@ -1250,7 +1250,7 @@ package accordingly. Additionally, the following functions are available:
 - *vopt_feature()* `vopt_feature <option> <property>`
 
   Same as `vopt_bool`, but uses `-D<property=enabled` and
-	`-D<property>=disabled` respectively. 
+	`-D<property>=disabled` respectively.
 
 The following example shows how to change a source package that uses GNU
 configure to enable a new build option to support PNG images:
@@ -1630,6 +1630,8 @@ In most cases version is inferred from shebang, install path or build style.
 Only required for some multi-language
 applications (e.g., the application is written in C while the command is
 written in Python) or just single Python file ones that live in `/usr/bin`.
+If `python_version` is set to `ignore`, python-containing shebangs will not be rewritten.
+Use this only if a package should not be using a system version of python.
 
 Also, a set of useful variables are defined to use in the templates:
 
