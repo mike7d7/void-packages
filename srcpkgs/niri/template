@@ -1,0 +1,21 @@
+# Template file for 'niri'
+pkgname=niri
+version=0.1.6
+revision=1
+build_style=cargo
+configure_args="--no-default-features --features xdp-gnome-screencast --features dbus"
+hostmakedepends="pkg-config"
+makedepends="eudev-libudev-devel libxkbcommon-devel libinput-devel pipewire-devel pango-devel libseat-devel clang libgbm-devel"
+depends="eudev-libudev libxkbcommon libinput libpipewire pango libseat libgbm"
+short_desc="Scrollable-tiling Wayland compositor"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/YaLTeR/niri"
+changelog="https://github.com/YaLTeR/niri/releases"
+distfiles="https://github.com/YaLTeR/niri/archive/refs/heads/main.tar.gz"
+checksum=82cc01cb2f0f3414ea45137fe95e2c3a83fa3daa909898a72cd2764d1a9c9bce
+
+post_install() {
+	vmkdir etc/niri
+	vcopy resources/default-config.kdl etc/niri/config.kdl
+}

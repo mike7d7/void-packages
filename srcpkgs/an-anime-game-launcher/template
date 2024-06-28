@@ -1,0 +1,14 @@
+# Template file for 'an-anime-game-launcher'
+pkgname=an-anime-game-launcher
+version=3.10.0
+revision=1
+build_style=cargo
+hostmakedepends="pkg-config cmake"
+makedepends="libzstd-devel glib-devel gdk-pixbuf-devel gtk4-devel libadwaita-devel"
+depends="libunwind xdg-desktop-portal xdelta3 7zip"
+short_desc="Anime Game launcher for Linux with telemetry disabling"
+maintainer="migue07juegos <migue07mx@protonmail.com>"
+license="GPL-3.0-only"
+homepage="https://github.com/an-anime-team/an-anime-game-launcher"
+distfiles="https://github.com/an-anime-team/an-anime-game-launcher/archive/refs/tags/${version}.tar.gz"
+checksum=1d225f71f4ba447010daa645bf74a999e5f943d5804b021a46019a70114389e3

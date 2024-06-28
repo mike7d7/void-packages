@@ -1,0 +1,32 @@
+# Template file for 'swayosd'
+pkgname=swayosd
+version=0.1.0
+revision=1
+build_style=meson
+configure_args="--buildtype=release"
+hostmakedepends="pkg-config cargo sassc"
+makedepends="eudev-libudev-devel libevdev-devel gtk+3-devel gtk-layer-shell-devel
+	libinput-devel atk-devel glib-devel pulseaudio-devel"
+short_desc="GTK based on screen display for keyboard shortcuts like volume"
+maintainer="migue07juegos <migue07mx@protonmail.com>"
+license="GPL-3.0-only"
+homepage="https://github.com/ErikReider/SwayOSD"
+distfiles="https://github.com/ErikReider/SwayOSD/archive/refs/heads/main.tar.gz"
+checksum=7de9fb5a5c5fb25eea77409fbedd9bce1f88e593f48f0cd97a2836d1ae4da55b
+
+do_install() {
+	meson install -C build
+	vbin /usr/bin/swayosd-client
+	vbin /usr/bin/swayosd-server
+	vbin /usr/bin/swayosd-libinput-backend
+	vinstall /usr/share/dbus-1/system.d/org.erikreider.swayosd.conf 644 /usr/share/dbus-1/system.d
+	vinstall /usr/share/dbus-1/system-services/org.erikreider.swayosd.service 644 /usr/share/dbus-1/system-services
+	vinstall /usr/share/polkit-1/actions/org.erikreider.swayosd.policy 644 /usr/share/polkit-1/actions
+	vinstall /usr/share/polkit-1/rules.d/org.erikreider.swayosd.rules 644 /usr/share/polkit-1/rules.d
+	vinstall /usr/lib/udev/rules.d/99-swayosd.rules 644 /usr/lib/udev/rules.d
+	vinstall /etc/xdg/swayosd/style.css 644 /etc/xdg/swayosd
+}
+
+post_install() {
+	vsv swayosd-libinput-backend
+}
