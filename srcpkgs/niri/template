@@ -1,6 +1,6 @@
 # Template file for 'niri'
 pkgname=niri
-version=0.1.6
+version=0.1.7
 revision=1
 build_style=cargo
 configure_args="--no-default-features --features xdp-gnome-screencast --features dbus"
@@ -13,7 +13,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/YaLTeR/niri"
 changelog="https://github.com/YaLTeR/niri/releases"
 distfiles="https://github.com/YaLTeR/niri/archive/refs/heads/main.tar.gz"
-checksum=82cc01cb2f0f3414ea45137fe95e2c3a83fa3daa909898a72cd2764d1a9c9bce
+checksum=55f62ef115c0a65fa80c883ca3f9c3407ef71ae7828178bf75d3b8b91ad36b4f
 
 post_install() {
 	vmkdir etc/niri
