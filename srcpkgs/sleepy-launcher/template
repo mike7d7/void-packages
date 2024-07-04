@@ -1,0 +1,14 @@
+# Template file for 'sleepy-launcher'
+pkgname=sleepy-launcher
+version=1.0.0
+revision=1
+build_style=cargo
+hostmakedepends="pkg-config cmake"
+makedepends="libzstd-devel glib-devel gdk-pixbuf-devel gtk4-devel libadwaita-devel"
+depends="libunwind xdg-desktop-portal xdelta3 p7zip libwebp-tools"
+short_desc="Sleepy game launcher for Linux with telemetry disabling "
+maintainer="migue07juegos <migue07mx@protonmail.com>"
+license="GPL-3.0-only"
+homepage="https://github.com/an-anime-team/sleepy-launcher"
+distfiles="https://github.com/an-anime-team/sleepy-launcher/archive/refs/tags/${version}.tar.gz"
+checksum=a2323fb83247e8290d650f7cca8ebfb8467506f7bc0ed2836015f865d5b2f93d
