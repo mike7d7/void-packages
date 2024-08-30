@@ -1,6 +1,6 @@
 # Template file for 'nvidia-open-dkms'
 pkgname=nvidia-open-dkms
-version=560.31.02
+version=560.35.03
 revision=1
 archs="x86_64"
 depends="dkms nvidia"
@@ -10,7 +10,7 @@ license="GPL-2.0-only, MIT"
 homepage="https://github.com/NVIDIA/open-gpu-kernel-modules"
 changelog="https://github.com/NVIDIA/open-gpu-kernel-modules/blob/main/CHANGELOG.md"
 distfiles="https://github.com/NVIDIA/open-gpu-kernel-modules/archive/refs/tags/${version}.tar.gz"
-checksum=f432713459cbc3d61eb353b76c71bb215ce5645c024024784731545510086f6d
+checksum=a5dfb5e9b051510cfa987a25a2afe58f8746582128a0e79cc2839b2ed2c7bc58
 replaces="nvidia-dkms>=0"
 dkms_modules="nvidia-open-dkms ${version}"
 triggers="dkms initramfs-regenerate"
