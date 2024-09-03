@@ -1,6 +1,6 @@
 # Template file for 'sleepy-launcher'
 pkgname=sleepy-launcher
-version=1.2.0
+version=1.2.1
 revision=1
 build_style=cargo
 hostmakedepends="pkg-config cmake"
@@ -11,4 +11,4 @@ maintainer="migue07juegos <migue07mx@protonmail.com>"
 license="GPL-3.0-only"
 homepage="https://github.com/an-anime-team/sleepy-launcher"
 distfiles="https://github.com/an-anime-team/sleepy-launcher/archive/refs/tags/${version}.tar.gz"
-checksum=bfd01be257b26d5e208f74987a36f2c3fa294df2dec7b388037d2c8e670c5a77
+checksum=4e825d11436e5dd3121e1550e0627ed2699d5dd4f013cd6e0d5a21be76745c72
